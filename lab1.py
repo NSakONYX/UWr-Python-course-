@@ -32,7 +32,7 @@ Uwaga: napisy powinny być poprawne gramatycznie (czyli musisz użyć właściwe
 
 """
 
-print("\n\n\nZadanie 1")
+print("\n\n\nZadanie 2\n")
 
 #funkcja pomocnicza
 """
@@ -58,7 +58,7 @@ def silnia(liczba):
 for i in range(1, 101):
     silnia(i)
 
-print("\n\n\nZadanie 2")
+print("\n\n\nZadanie 3\n")
 """
 Zadanie 3. (0.5p) Napisz procedurę krzyzyk(n), która rysuje krzyżyk z gwiazdek, 
 składający się z 5-ciu kwadratów o boku n, jak na poniższym rysunku (na którym 
@@ -84,12 +84,40 @@ def cross(size):
     for _ in range (size):
         print(size*" "+size*"*"+size*" ")
 
-
     for _ in range (size):
         print(3*size*"*")
-
 
     for _ in range (size):
         print(size*" "+size*"*"+size*" ")
 
 cross(6)
+
+
+"""
+Zadanie 4. Hasła losowane są dość bezpieczne, niemniej trudno się je zapamiętuje. 
+Twoim zadaniem będzie napisać funkcję, która losuje łatwe do zapamiętania hasło 
+(które zarazem pozostaje dość bezpieczne). Takie hasło będzie się składać z losowych 
+krótkich fragmentów tekstu, tak dobranych, że łatwo się je wymawia po połączeniu. 
+Funkcja losująca te fragmenty znajduje się w module losowanie_fagmentow, który powinieneś 
+pobrać ze strony wykładu, umieścić w kartotece, w której znajduje się Twój program. Wówczas program:
+
+from losowanie_fagmentow import losuj_fragment
+for i in range(5):
+    print (losuj_fragment())
+
+może wypisać coś w stylu:
+
+sia
+je
+tra
+kawa
+ce
+
+(wiemy, że istnieją fragmenty o długości 2,3 oraz 4, natomiast nie ma żadnych innych) 
+Musisz napisać funkcję losuj_haslo(n), która losuje hasło, składające się ze wspomnianych fragmentów, o długości 
+dokładnie n znaków. Zademonstruj działanie tej funkcji pisząc program, który wywołuje ją 10 razy
+ dla n=8 oraz 10 razy dla n=12 i wypisuje wyniki. Uwaga: każdy fragment powinien mieć możliwość zostania wylosowanym
+"""
+
+from losowanie_fragmentow import losuj_fragment
+
