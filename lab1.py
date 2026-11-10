@@ -114,10 +114,43 @@ kawa
 ce
 
 (wiemy, że istnieją fragmenty o długości 2,3 oraz 4, natomiast nie ma żadnych innych) 
+
 Musisz napisać funkcję losuj_haslo(n), która losuje hasło, składające się ze wspomnianych fragmentów, o długości 
 dokładnie n znaków. Zademonstruj działanie tej funkcji pisząc program, który wywołuje ją 10 razy
  dla n=8 oraz 10 razy dla n=12 i wypisuje wyniki. Uwaga: każdy fragment powinien mieć możliwość zostania wylosowanym
 """
 
+print("\n\n\nZadanie 4")
+
 from losowanie_fragmentow import losuj_fragment
+
+def losuj_haslo(n):
+    if (n<2) : return ""
+
+    passwordSize = n
+    password = []
+    iterations = 0
+    output = ""
+
+    while (n!=0):
+        iterations += 1
+        piece = losuj_fragment()
+        password.append(piece)
+        n -= len(piece)
+
+        if (n==0): 
+            for element in password:
+                output += element
+            print(output)
+        elif (n<0 or n==1): 
+            pieceLength = len(password[-1])
+            n+=(len(password[-1]))
+            password.pop()
+
+
+
+
+
+losuj_haslo(10)
+
 
