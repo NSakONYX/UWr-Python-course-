@@ -148,9 +148,7 @@ def losuj_haslo(n):
             password.pop()
 
 
-
-
-
+#wywolanie funkcji
 losuj_haslo(10)
 
 
